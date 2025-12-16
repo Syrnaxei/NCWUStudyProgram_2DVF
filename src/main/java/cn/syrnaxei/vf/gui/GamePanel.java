@@ -26,15 +26,6 @@ public class GamePanel extends JPanel implements Runnable{
         gameThread.start();
         isRunning = true;
     }
-
-    /**
-     * 更新游戏状态
-     * 待实现
-     */
-    private void updateGameState() {
-
-    }
-
     /**
      * 游戏主循环（核心）
      * 运行在独立线程中，负责：更新游戏状态 → 重绘界面 → 控制帧率
@@ -53,4 +44,23 @@ public class GamePanel extends JPanel implements Runnable{
             }
         }
     }
+
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g);
+
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        g2d.setColor(new Color(255, 255, 255));
+        g2d.setFont(new Font("Arial",Font.BOLD,24));
+        g2d.drawString("test",20,50);
+    }
+    /**
+     * 更新游戏状态
+     * 待实现
+     */
+    private void updateGameState() {
+
+    }
+
 }
