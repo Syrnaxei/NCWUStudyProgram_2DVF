@@ -28,4 +28,8 @@ public class Target {
     public void setAlive(boolean alive) {
         isAlive = alive;
     }
+
+    public boolean isHit(int mouseX, int mouseY) {
+        return isAlive && mouseX >= x && mouseX <= x + GameConfig.TARGET_SIZE && mouseY >= y && mouseY <= y + GameConfig.TARGET_SIZE;
+    }
 }
