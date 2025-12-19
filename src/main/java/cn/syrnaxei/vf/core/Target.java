@@ -1,9 +1,9 @@
 package cn.syrnaxei.vf.core;
 
 public class Target {
-    private int x;
-    private int y;
-    private int size;
+    private final int x;
+    private final int y;
+    private final int size;
     private boolean isAlive;
 
     public Target(int x,int y,int size){
