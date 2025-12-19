@@ -3,14 +3,14 @@ package cn.syrnaxei.vf.core;
 public class Target {
     private int x;
     private int y;
+    private int size;
     private boolean isAlive;
-    private boolean isMoving;
 
-    public Target(int x,int y,boolean isMoving){
+    public Target(int x,int y,int size){
         this.x = x;
         this.y = y;
+        this.size = size;
         this.isAlive = true;
-        this.isMoving = isMoving;
     }
 
     public int getX() {
@@ -21,6 +21,10 @@ public class Target {
         return y;
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public boolean isAlive() {
         return isAlive;
     }
@@ -29,7 +33,7 @@ public class Target {
         isAlive = alive;
     }
 
-    public boolean isHit(int mouseX, int mouseY) {
-        return isAlive && mouseX >= x && mouseX <= x + GameConfig.TARGET_SIZE && mouseY >= y && mouseY <= y + GameConfig.TARGET_SIZE;
+    public boolean isHit(int mouseX, int mouseY , int targetSize) {
+        return isAlive && mouseX >= x && mouseX <= x + targetSize && mouseY >= y && mouseY <= y + targetSize;
     }
 }

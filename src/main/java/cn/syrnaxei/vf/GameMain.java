@@ -9,7 +9,7 @@ public class GameMain {
         SwingUtilities.invokeLater(() -> {
             GameGUI game = new GameGUI();
             game.initGame();
-            game.startGame();
         });
     }
 }
+
